@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jzw.mapper.UserMapper">
+    <select id="login" resultType="user">
+        SELECT * FROM demo_user u WHERE u.name=#{user.username} AND u.pwd = #{user.password}
+    </select>
+
+    <!--插入字段-->
+    <sql id="save_column">
+        username,password
+    </sql>
+    <!--插入的值-->
+    <sql id="save_value">
+        #{entity.username},#{entity.password}
+    </sql>
+
+    <insert id="save">
+        INSERT INTO demo_user(
+        <include refid="save_column"/>
+        ) VALUES (
+        <include refid="save_value"/>
+        )
+    </insert>
+
+</mapper>

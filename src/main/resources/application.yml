@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/jzw_admin
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: root
+mybatis:
+  config-location: classpath:mapper/config/mybatis-configuration.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.jzw.entity
+logging:
+  file: D:/logs/jzw.log
+  level: error
