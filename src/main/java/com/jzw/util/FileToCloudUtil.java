@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 public class FileToCloudUtil {
 
     public String uploadToCloud(){
-        System.out.println("=======");
         return null;
     }
 
